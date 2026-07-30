@@ -4,4 +4,5 @@ public class Program
     {
         //new MainMenuController().Run();
     }
+    //Java é melhor que C#
 }
