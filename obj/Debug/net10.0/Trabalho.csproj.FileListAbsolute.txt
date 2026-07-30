@@ -1,0 +1,14 @@
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.GeneratedMSBuildEditorConfig.editorconfig
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.AssemblyInfoInputs.cache
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.AssemblyInfo.cs
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.csproj.CoreCompileInputs.cache
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.deps.json
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.runtimeconfig.json
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.dll
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.pdb
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.dll
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/refint/Trabalho.dll
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.pdb
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.genruntimeconfig.cache
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/ref/Trabalho.dll
