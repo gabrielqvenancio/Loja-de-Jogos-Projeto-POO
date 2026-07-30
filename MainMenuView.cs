@@ -8,13 +8,12 @@ public class MainMenuView
         Console.WriteLine("-1) Desligar");
 
         int option = Convert.ToInt32(Console.ReadLine());
-        bool continueProgram = true;
 
         switch(option)
         {
             case 1:
             {
-                //new GameDataBaseController().Run();
+                new GameDatabaseController().Run();
                 break;        
             }
             case 2:
@@ -29,14 +28,12 @@ public class MainMenuView
             }
             case -1:
             {
-                continueProgram = false;
-                break;        
+                Console.WriteLine("Desligando...");
+                Console.WriteLine("Pressione qualquer tecla para fechar.");
+                Console.ReadKey();    
+                return false;
             }
         }
-    
-        Console.WriteLine("Pressione qualquer tecla para continuar.");
-        Console.ReadKey();
-        Console.Clear();
-        return continueProgram;
+        return true;
     }
 }

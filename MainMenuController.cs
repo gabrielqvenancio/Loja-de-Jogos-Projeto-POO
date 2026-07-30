@@ -9,9 +9,8 @@ public class MainMenuController
 
         do
         {
+            Console.Clear();
             continueProgram = view.Run();
         } while(continueProgram);
-
-        Console.WriteLine("Desligando");
     }
 }

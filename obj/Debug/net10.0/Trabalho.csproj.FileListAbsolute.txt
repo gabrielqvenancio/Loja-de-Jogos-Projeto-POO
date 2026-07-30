@@ -12,3 +12,4 @@
 /home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.pdb
 /home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.genruntimeconfig.cache
 /home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/ref/Trabalho.dll
+/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.sourcelink.json
