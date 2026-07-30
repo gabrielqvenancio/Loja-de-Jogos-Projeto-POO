@@ -14,7 +14,7 @@ public class GameDatabaseView
         {
             case 1:
             {
-                //new CreateGameController().Run();
+                new CreateGameController().Run();
                 break;        
             }
             case 2:
