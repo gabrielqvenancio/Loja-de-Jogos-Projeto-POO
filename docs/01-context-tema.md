@@ -1,6 +1,6 @@
 # Contextualização do Tema
 
-Em lojas de videogames é comum a comercialização de jogos em mídia física - tanto novos quanto usados - desenvolvidos esses dispositivos.
+Em lojas de videogames é comum a comercialização de jogos em mídia física - tanto novos quanto usados - desenvolvidos para esses dispositivos.
 
 Assim, negociar maleavelmente com clientes as vendas, compras ou trocas desses jogos torna-se uma desafio por questões como:
 *  A popularidade e vendabilidade do jogo;
