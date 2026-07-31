@@ -51,7 +51,7 @@ public class BuySellModel
         if (account is null) return false;
 
         var admin = _accounts.FindByName("Admin");
-        if (admin is null) return false;
+        if (admin is null || !admin.Debit(game.ReleasePrice)) return false;
 
         if (!account.RemoveGame(game.NormalizedName)) return false;
         account.Credit(game.ReleasePrice);
