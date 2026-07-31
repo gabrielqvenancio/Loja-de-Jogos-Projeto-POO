@@ -19,16 +19,16 @@ public class GameDatabaseController
         {
             Console.Clear();
             _view.ShowMenu();
-            var option = _view.ReadOption();
+            var option = StandardView.ReadOption();
             Console.WriteLine();
 
             switch (option)
             {
                 case 1:
-                    new CreateGameController(_store, _log).Run();
+                    CreateGame();
                     break;
                 case 2:
-                    _view.ShowGames(_store.GetAll());
+                    ShowGames();
                     break;
                 case 3:
                     RemoveGame();
@@ -37,11 +37,11 @@ public class GameDatabaseController
                     continueOperations = false;
                     break;
                 default:
-                    _view.ShowMessage("Opção inválida.");
+                    StandardView.ShowMessage("Opção inválida.");
                     break;
             }
 
-            if (continueOperations && option != -1)
+            if (continueOperations)
             {
                 Console.WriteLine("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
@@ -49,23 +49,45 @@ public class GameDatabaseController
         }
     }
 
+    private void CreateGame()
+    {
+        CreateGameModel model = new(_store, _log);
+        CreateGameView view = new();
+
+        var game = view.ReadGameData();
+        if (game is null)
+        {
+            StandardView.ShowMessage("Operação cancelada.");
+            return;
+        }
+
+        var success = model.RegisterGame(game);
+        view.ShowResult(success, game);
+    }
+
     private void RemoveGame()
     {
-        var name = _view.ReadNameToRemove();
+        RemoveGameModel model = new(_store);
+
+        var name = StandardView.ReadName("Informe o nome do jogo para remover: ");
         if (string.IsNullOrWhiteSpace(name))
         {
-            _view.ShowMessage("Nome inválido.");
+            StandardView.ShowMessage("Nome inválido.");
             return;
         }
 
-        var removed = _store.Delete(name);
-        if (removed)
+        if (model.RemoveGame(name))
         {
             _log.Log($"Jogo removido: {name}");
-            _view.ShowMessage("Jogo removido com sucesso.");
+            StandardView.ShowMessage("Jogo removido com sucesso.");
             return;
         }
 
-        _view.ShowMessage("Jogo não encontrado.");
+        StandardView.ShowMessage("Jogo não encontrado.");
+    }
+
+    private void ShowGames()
+    {
+        _view.ShowGames(_store.GetAll());
     }
 }

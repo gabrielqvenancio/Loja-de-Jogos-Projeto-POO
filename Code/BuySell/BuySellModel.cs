@@ -13,14 +13,14 @@ public class BuySellModel
 
     public bool Purchase(UserAccount account, string gameName)
     {
-        if (account == null || string.IsNullOrWhiteSpace(gameName)) return false;
+        if (account is null || string.IsNullOrWhiteSpace(gameName)) return false;
 
         var normalized = GameInfo.NormalizeName(gameName);
         var game = _store.GetAll().FirstOrDefault(g => g.NormalizedName == normalized);
-        if (game == null || game.Quantity <= 0) return false;
+        if (game is null || game.Quantity <= 0) return false;
 
         var admin = _accounts.FindByName("Admin");
-        if (admin == null) return false;
+        if (admin is null) return false;
 
         if (!account.Debit(game.ReleasePrice)) return false;
 
@@ -45,18 +45,18 @@ public class BuySellModel
 
     public bool Sell(UserAccount account, string gameName)
     {
-        if (account == null || string.IsNullOrWhiteSpace(gameName)) return false;
+        if (account is null || string.IsNullOrWhiteSpace(gameName)) return false;
 
         var normalized = GameInfo.NormalizeName(gameName);
         if (!account.Owns(normalized)) return false;
 
         var game = account.OwnedGames.FirstOrDefault(g => g.NormalizedName == normalized);
-        if (game == null) return false;
+        if (game is null) return false;
 
         if (!account.RemoveGame(normalized)) return false;
 
         var admin = _accounts.FindByName("Admin");
-        if (admin == null || !admin.Debit(game.ReleasePrice))
+        if (admin is null || !admin.Debit(game.ReleasePrice))
         {
             account.AddGame(game);
             return false;

@@ -15,13 +15,15 @@ public class MainMenuController
 
     public void Run()
     {
+        new TestModel().Run(_store, _accounts);
+        
         bool continueProgram = true;
 
         while (continueProgram)
         {
             Console.Clear();
             _view.ShowMenu();
-            var option = _view.ReadOption();
+            var option = StandardView.ReadOption();
             Console.WriteLine();
 
             switch (option)
@@ -43,13 +45,13 @@ public class MainMenuController
                     _view.ShowExitMessage();
                     break;
                 default:
-                    _view.ShowMessage("Opção inválida.");
+                    StandardView.ShowMessage("Opção inválida.");
                     break;
             }
 
-            if (continueProgram && option != -1)
+            if (continueProgram)
             {
-                Console.WriteLine("\nPressione qualquer tecla para continuar...");
+                StandardView.ShowMessage("\nPressione qualquer tecla para continuar...");
                 Console.ReadKey();
             }
         }

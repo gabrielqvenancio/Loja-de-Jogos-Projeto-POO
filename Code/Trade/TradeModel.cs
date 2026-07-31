@@ -9,7 +9,7 @@ public class TradeModel
 
     public (bool Success, int? PaymentAmount, string? PayingUserName) Trade(UserAccount from, UserAccount to, string fromGameName, string toGameName)
     {
-        if (from == null || to == null) return (false, null, null);
+        if (from is null || to is null) return (false, null, null);
 
         var fromNormalized = GameInfo.NormalizeName(fromGameName);
         var toNormalized = GameInfo.NormalizeName(toGameName);

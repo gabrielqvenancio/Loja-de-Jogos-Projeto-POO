@@ -1,12 +1,12 @@
-public class Program
+public class TestModel
 {
-    public static void Main()
+    public void Run(GameStore store, AccountStore accounts)
     {
-        var store = new GameStore();
-        var transactionLog = new TransactionLog();
-        var accounts = new AccountStore();
+        CreateTestData(store, accounts);
+    }
 
-        // create a fixed admin and a couple of sample customers
+    private void CreateTestData(GameStore store, AccountStore accounts)
+    {
         var admin = new UserAccount("Admin", 1000);
         var player = new UserAccount("Player1", 200);
         var secondPlayer = new UserAccount("Player2", 150);
@@ -16,7 +16,5 @@ public class Program
 
         var sampleGame = new GameInfo("The Witcher 3", new DateTime(2015, 5, 19), 80, "CD Projekt Red");
         store.Add(sampleGame);
-
-        new MainMenuController(store, accounts, transactionLog).Run();
     }
 }

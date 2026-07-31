@@ -8,7 +8,7 @@ public class AccountStore
 
     public bool Add(UserAccount account)
     {
-        if (account == null) return false;
+        if (account is null) return false;
         if (_accounts.Any(a => a.Name.Equals(account.Name, System.StringComparison.OrdinalIgnoreCase))) return false;
         _accounts.Add(account);
         return true;
@@ -19,7 +19,7 @@ public class AccountStore
         if (string.IsNullOrWhiteSpace(name)) return false;
 
         var account = FindByName(name);
-        if (account == null) return false;
+        if (account is null) return false;
 
         return _accounts.Remove(account);
     }

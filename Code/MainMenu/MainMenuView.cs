@@ -13,18 +13,6 @@ public class MainMenuView
         Console.WriteLine();
     }
 
-    public int ReadOption()
-    {
-        Console.Write("Escolha uma opção: ");
-        var input = Console.ReadLine();
-        return int.TryParse(input, out var option) ? option : 0;
-    }
-
-    public void ShowMessage(string message)
-    {
-        Console.WriteLine(message);
-    }
-
     public void ShowExitMessage()
     {
         Console.WriteLine("Desligando...");

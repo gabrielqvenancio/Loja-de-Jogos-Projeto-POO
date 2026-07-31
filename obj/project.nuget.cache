@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "xAMGg0z9QDQ=",
   "success": true,
   "projectFilePath": "/home/vitor/Desktop/Projeto-POO/Trabalho.csproj",
+=======
+  "dgSpecHash": "J8UN28EIUeE=",
+  "success": true,
+  "projectFilePath": "/home/duplogg/Área de trabalho/Projeto POO/Trabalho.csproj",
+>>>>>>> origin/main
   "expectedPackageFiles": [],
   "logs": []
 }
