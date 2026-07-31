@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/Trabalho.csproj",
+      "projectUniqueName": "/home/vitor/Desktop/Projeto-POO/Trabalho.csproj",
       "projectName": "Trabalho",
-      "projectPath": "/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/Trabalho.csproj",
+      "projectPath": "/home/vitor/Desktop/Projeto-POO/Trabalho.csproj",
       "packagesPath": "/home/vitor/.nuget/packages/",
-      "outputPath": "/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/",
+      "outputPath": "/home/vitor/Desktop/Projeto-POO/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/vitor/.nuget/NuGet/NuGet.Config"
