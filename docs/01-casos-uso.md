@@ -1,6 +1,6 @@
-Casos de uso:
+## Casos de uso:
 
-I) Painel do registro de jogos, tendo como opções:
+# I) Painel do registro de jogos, tendo como opções:
 - Registrar um jogo;
 - Editar as informações de um jogo já registrado;
 - Remover um jogo;
