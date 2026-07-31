@@ -11,8 +11,9 @@ Temos como opções:
 - Registrar um cliente;
 - Editar as informações de um cliente já cadastrado;
 - Adicionar o saldo de um cliente;
+- Remover um cliente;
 
 ## III) Painel de transações
-- Compra;
-- Venda;
-- Troca;
+Temos como opções:
+- Orçamentos de Compra;
+- Realizar Venda;
