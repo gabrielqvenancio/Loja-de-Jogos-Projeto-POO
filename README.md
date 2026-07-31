@@ -7,7 +7,7 @@ Dessa forma, é objetivado a aplicação de conceitos estudados durante a discip
 *  Orientação a objetos e dsenvolvimento iterativo;
 *  Designs Patterns e UML para modelagem inicial.
 
-## Integrantes
+## Autores/ Integrantes do Grupo
 
 *  Gabriel Queiroz Venâncio;
 *  João Pedro Meneghetti Collusso;
