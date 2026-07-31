@@ -1,34 +1,3 @@
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.GeneratedMSBuildEditorConfig.editorconfig
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.AssemblyInfoInputs.cache
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.AssemblyInfo.cs
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.csproj.CoreCompileInputs.cache
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.deps.json
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.runtimeconfig.json
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.dll
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/bin/Debug/net10.0/Trabalho.pdb
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.dll
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/refint/Trabalho.dll
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.pdb
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.genruntimeconfig.cache
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/ref/Trabalho.dll
-/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/Debug/net10.0/Trabalho.sourcelink.json
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/bin/Debug/net10.0/Trabalho
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/bin/Debug/net10.0/Trabalho.deps.json
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/bin/Debug/net10.0/Trabalho.runtimeconfig.json
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/bin/Debug/net10.0/Trabalho.dll
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/bin/Debug/net10.0/Trabalho.pdb
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.GeneratedMSBuildEditorConfig.editorconfig
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.AssemblyInfoInputs.cache
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.AssemblyInfo.cs
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.csproj.CoreCompileInputs.cache
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.sourcelink.json
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.dll
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/refint/Trabalho.dll
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.pdb
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/Trabalho.genruntimeconfig.cache
-/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/Debug/net10.0/ref/Trabalho.dll
-<<<<<<< HEAD
 /home/vitor/Desktop/Projeto-POO/bin/Debug/net10.0/Trabalho
 /home/vitor/Desktop/Projeto-POO/bin/Debug/net10.0/Trabalho.deps.json
 /home/vitor/Desktop/Projeto-POO/bin/Debug/net10.0/Trabalho.runtimeconfig.json
@@ -44,20 +13,3 @@
 /home/vitor/Desktop/Projeto-POO/obj/Debug/net10.0/Trabalho.pdb
 /home/vitor/Desktop/Projeto-POO/obj/Debug/net10.0/Trabalho.genruntimeconfig.cache
 /home/vitor/Desktop/Projeto-POO/obj/Debug/net10.0/ref/Trabalho.dll
-=======
-/home/duplogg/Área de trabalho/Projeto POO/bin/Debug/net10.0/Trabalho
-/home/duplogg/Área de trabalho/Projeto POO/bin/Debug/net10.0/Trabalho.deps.json
-/home/duplogg/Área de trabalho/Projeto POO/bin/Debug/net10.0/Trabalho.runtimeconfig.json
-/home/duplogg/Área de trabalho/Projeto POO/bin/Debug/net10.0/Trabalho.dll
-/home/duplogg/Área de trabalho/Projeto POO/bin/Debug/net10.0/Trabalho.pdb
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.GeneratedMSBuildEditorConfig.editorconfig
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.AssemblyInfoInputs.cache
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.AssemblyInfo.cs
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.csproj.CoreCompileInputs.cache
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.sourcelink.json
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.dll
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/refint/Trabalho.dll
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.pdb
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/Trabalho.genruntimeconfig.cache
-/home/duplogg/Área de trabalho/Projeto POO/obj/Debug/net10.0/ref/Trabalho.dll
->>>>>>> origin/main
