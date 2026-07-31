@@ -11,20 +11,6 @@ public class BuySellView
         Console.WriteLine();
     }
 
-    public string? ReadGameName(string prompt)
-    {
-        Console.Write(prompt);
-        var name = Console.ReadLine();
-        return string.IsNullOrWhiteSpace(name) ? null : name.Trim();
-    }
-
-    public string? ReadAccountName()
-    {
-        Console.Write("Nome do cliente para operar (deixe vazio para usar o cliente padrão): ");
-        var name = Console.ReadLine();
-        return string.IsNullOrWhiteSpace(name) ? null : name.Trim();
-    }
-
     public void ShowAccount(UserAccount account)
     {
         Console.WriteLine();

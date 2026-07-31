@@ -26,46 +26,66 @@ public class BuySellController
             return;
         }
 
-        bool loop = true;
-        while (loop)
+        bool continueOperations = true;
+        while (continueOperations)
         {
             Console.Clear();
             _view.ShowAccount(account);
             _view.ShowMenu();
             Console.WriteLine();
-            var opt = StandardView.ReadOption();
 
-            switch (opt)
+            var option = StandardView.ReadOption();
+
+            switch (option)
             {
                 case 1:
                 {
-                    var name = _view.ReadGameName("Nome do jogo para comprar: ");
-                    if (name is null) { StandardView.ShowMessage("Nome inválido."); break; }
-                    var ok = _model.Purchase(account, name);
-                    StandardView.ShowMessage(ok ? "Compra realizada." : "Compra falhou.");
+                    BuyGame(account);
                     break;
                 }
                 case 2:
                 {
-                    var name = _view.ReadGameName("Nome do jogo para vender: ");
-                    if (name is null) { StandardView.ShowMessage("Nome inválido."); break; }
-                    var ok = _model.Sell(account, name);
-                    StandardView.ShowMessage(ok ? "Venda realizada." : "Venda falhou.");
+                    SellGame(account);
                     break;
                 }
                 case -1:
-                    loop = false; break;
+                    continueOperations = false;
+                    break;
                 default:
-                    StandardView.ShowMessage("Opção inválida."); break;
+                    StandardView.ShowMessage("Opção inválida.");
+                    break;
             }
 
-            if (loop) { Console.WriteLine("\nPressione qualquer tecla para continuar..."); Console.ReadKey(); }
+            if (continueOperations) { Console.WriteLine("\nPressione qualquer tecla para continuar..."); Console.ReadKey(); }
         }
+    }
+
+    private void BuyGame(UserAccount account)
+    {
+        var name = StandardView.ReadName("Nome do jogo para comprar: ");
+        if (name is null)
+        { 
+            StandardView.ShowMessage("Nome inválido.");
+            return;
+        }
+        StandardView.ShowMessage(_model.Purchase(account, name) ? "Compra realizada." : "Compra falhou.");
+    }
+
+    private void SellGame(UserAccount account)
+    {
+        var name = StandardView.ReadName("Nome do jogo para vender: ");
+        if (name is null)
+        {
+            StandardView.ShowMessage("Nome inválido.");
+            return;
+        }
+        StandardView.ShowMessage(_model.Sell(account, name) ? "Venda realizada." : "Venda falhou.");
     }
 
     private UserAccount? SelectAccount()
     {
-        var requestedName = _view.ReadAccountName();
+        var requestedName = StandardView.ReadName("Nome do cliente para operar (deixe vazio para usar o cliente padrão): ");
+
         if (string.IsNullOrWhiteSpace(requestedName))
         {
             return _accounts.GetAll().FirstOrDefault();

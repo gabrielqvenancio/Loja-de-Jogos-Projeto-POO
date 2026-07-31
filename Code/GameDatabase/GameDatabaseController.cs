@@ -68,9 +68,8 @@ public class GameDatabaseController
     private void RemoveGame()
     {
         RemoveGameModel model = new(_store);
-        RemoveGameView view = new();
 
-        var name = view.ReadNameToRemove();
+        var name = StandardView.ReadName("Informe o nome do jogo para remover: ");
         if (string.IsNullOrWhiteSpace(name))
         {
             StandardView.ShowMessage("Nome inválido.");

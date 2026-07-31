@@ -7,5 +7,12 @@ public static class StandardView
         return int.TryParse(input, out var option) ? option : 0;
     }
 
+    public static string? ReadName(string prompt)
+    {
+        Console.Write(prompt);
+        var name = Console.ReadLine();
+        return string.IsNullOrWhiteSpace(name) ? null : name.Trim();
+    }
+
     public static void ShowMessage(string msg) => Console.WriteLine(msg);
 }

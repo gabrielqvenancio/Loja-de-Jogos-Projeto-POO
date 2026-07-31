@@ -13,13 +13,6 @@ public class CustomerDatabaseView
         Console.WriteLine();
     }
 
-    public string? ReadCustomerName(string prompt)
-    {
-        Console.Write(prompt);
-        var name = Console.ReadLine();
-        return string.IsNullOrWhiteSpace(name) ? null : name.Trim();
-    }
-
     public void ShowCustomers(IReadOnlyList<UserAccount> customers)
     {
         Console.WriteLine();

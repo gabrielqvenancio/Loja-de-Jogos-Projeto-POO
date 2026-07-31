@@ -83,7 +83,7 @@ public class CustomerDatabaseController
     {
         RemoveCustomerModel model = new(_accounts, _log);
 
-        var name = _view.ReadCustomerName("Informe o nome do cliente para remover: ");
+        var name = StandardView.ReadName("Informe o nome do cliente para remover: ");
         if (string.IsNullOrWhiteSpace(name))
         {
             StandardView.ShowMessage("Nome inválido.");
@@ -99,7 +99,7 @@ public class CustomerDatabaseController
         CustomerBalanceModel model = new(_accounts, _log);
         CustomerBalanceView view = new();
 
-        var name = _view.ReadCustomerName("Informe o nome do cliente para atribuir saldo: ");
+        var name = StandardView.ReadName("Informe o nome do cliente para atribuir saldo: ");
         if (string.IsNullOrWhiteSpace(name))
         {
             StandardView.ShowMessage("Nome inválido.");
