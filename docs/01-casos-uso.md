@@ -1,6 +1,6 @@
-# Casos de uso:
+# Casos de uso
 
-Painel do registro de jogos
+## I) Painel do registro de jogos
 Temos como opções:
 - Registrar um jogo;
 - Editar as informações de um jogo já registrado;
