@@ -11,13 +11,6 @@ public class BuySellView
         Console.WriteLine();
     }
 
-    public int ReadOption()
-    {
-        Console.Write("Escolha uma opção: ");
-        var input = Console.ReadLine();
-        return int.TryParse(input, out var option) ? option : 0;
-    }
-
     public string? ReadGameName(string prompt)
     {
         Console.Write(prompt);
@@ -31,8 +24,6 @@ public class BuySellView
         var name = Console.ReadLine();
         return string.IsNullOrWhiteSpace(name) ? null : name.Trim();
     }
-
-    public void ShowMessage(string message) => Console.WriteLine(message);
 
     public void ShowAccount(UserAccount account)
     {

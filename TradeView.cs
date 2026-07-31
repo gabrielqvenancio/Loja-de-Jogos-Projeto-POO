@@ -10,13 +10,6 @@ public class TradeView
         Console.WriteLine();
     }
 
-    public int ReadOption()
-    {
-        Console.Write("Escolha uma opção: ");
-        var input = Console.ReadLine();
-        return int.TryParse(input, out var option) ? option : 0;
-    }
-
     public (string fromUser, string toUser, string fromGame, string toGame)? ReadTradeData()
     {
         Console.Write("Nome do usuário A (quem oferece): ");
@@ -37,6 +30,4 @@ public class TradeView
 
         return (a.Trim(), b.Trim(), ga.Trim(), gb.Trim());
     }
-
-    public void ShowMessage(string msg) => Console.WriteLine(msg);
 }

@@ -15,14 +15,14 @@ public class BuySellController
     {
         if (_accounts.GetAll().Count == 0)
         {
-            _view.ShowMessage("Nenhuma conta disponível.");
+            StandardView.ShowMessage("Nenhuma conta disponível.");
             return;
         }
 
         var account = SelectAccount();
         if (account == null)
         {
-            _view.ShowMessage("Cliente inválido.");
+            StandardView.ShowMessage("Cliente inválido.");
             return;
         }
 
@@ -33,30 +33,30 @@ public class BuySellController
             _view.ShowAccount(account);
             _view.ShowMenu();
             Console.WriteLine();
-            var opt = _view.ReadOption();
+            var opt = StandardView.ReadOption();
 
             switch (opt)
             {
                 case 1:
                 {
                     var name = _view.ReadGameName("Nome do jogo para comprar: ");
-                    if (name == null) { _view.ShowMessage("Nome inválido."); break; }
+                    if (name == null) { StandardView.ShowMessage("Nome inválido."); break; }
                     var ok = _model.Purchase(account, name);
-                    _view.ShowMessage(ok ? "Compra realizada." : "Compra falhou.");
+                    StandardView.ShowMessage(ok ? "Compra realizada." : "Compra falhou.");
                     break;
                 }
                 case 2:
                 {
                     var name = _view.ReadGameName("Nome do jogo para vender: ");
-                    if (name == null) { _view.ShowMessage("Nome inválido."); break; }
+                    if (name == null) { StandardView.ShowMessage("Nome inválido."); break; }
                     var ok = _model.Sell(account, name);
-                    _view.ShowMessage(ok ? "Venda realizada." : "Venda falhou.");
+                    StandardView.ShowMessage(ok ? "Venda realizada." : "Venda falhou.");
                     break;
                 }
                 case -1:
                     loop = false; break;
                 default:
-                    _view.ShowMessage("Opção inválida."); break;
+                    StandardView.ShowMessage("Opção inválida."); break;
             }
 
             if (loop) { Console.WriteLine("\nPressione qualquer tecla para continuar..."); Console.ReadKey(); }

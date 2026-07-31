@@ -17,7 +17,7 @@ public class CustomerDatabaseController
         {
             Console.Clear();
             _view.ShowMenu();
-            var option = _view.ReadOption();
+            var option = StandardView.ReadOption();
             Console.WriteLine();
 
             switch (option)
@@ -27,12 +27,12 @@ public class CustomerDatabaseController
                     var data = _view.ReadCustomerData();
                     if (data == null)
                     {
-                        _view.ShowMessage("Dados inválidos.");
+                        StandardView.ShowMessage("Dados inválidos.");
                         break;
                     }
 
                     var success = _model.RegisterCustomer(data.Value.Name!, data.Value.InitialBalance ?? 0);
-                    _view.ShowMessage(success ? "Cliente cadastrado com sucesso." : "Não foi possível cadastrar o cliente.");
+                    StandardView.ShowMessage(success ? "Cliente cadastrado com sucesso." : "Não foi possível cadastrar o cliente.");
                     break;
                 }
                 case 2:
@@ -43,12 +43,12 @@ public class CustomerDatabaseController
                     var name = _view.ReadCustomerName("Informe o nome do cliente para remover: ");
                     if (string.IsNullOrWhiteSpace(name))
                     {
-                        _view.ShowMessage("Nome inválido.");
+                        StandardView.ShowMessage("Nome inválido.");
                         break;
                     }
 
                     var success = _model.RemoveCustomer(name);
-                    _view.ShowMessage(success ? "Cliente removido com sucesso." : "Cliente não encontrado.");
+                    StandardView.ShowMessage(success ? "Cliente removido com sucesso." : "Cliente não encontrado.");
                     break;
                 }
                 case 4:
@@ -56,7 +56,7 @@ public class CustomerDatabaseController
                     var name = _view.ReadCustomerName("Informe o nome do cliente para atribuir saldo: ");
                     if (string.IsNullOrWhiteSpace(name))
                     {
-                        _view.ShowMessage("Nome inválido.");
+                        StandardView.ShowMessage("Nome inválido.");
                         break;
                     }
 
@@ -67,14 +67,14 @@ public class CustomerDatabaseController
                     }
 
                     var success = _model.AddBalance(name, balance.Value);
-                    _view.ShowMessage(success ? "Saldo adicionado com sucesso." : "Cliente não encontrado.");
+                    StandardView.ShowMessage(success ? "Saldo adicionado com sucesso." : "Cliente não encontrado.");
                     break;
                 }
                 case -1:
                     continueOperations = false;
                     break;
                 default:
-                    _view.ShowMessage("Opção inválida.");
+                    StandardView.ShowMessage("Opção inválida.");
                     break;
             }
 

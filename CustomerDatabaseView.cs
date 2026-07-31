@@ -13,13 +13,6 @@ public class CustomerDatabaseView
         Console.WriteLine();
     }
 
-    public int ReadOption()
-    {
-        Console.Write("Escolha uma opção: ");
-        var input = Console.ReadLine();
-        return int.TryParse(input, out var option) ? option : 0;
-    }
-
     public (string? Name, int? InitialBalance)? ReadCustomerData()
     {
         Console.Write("Nome do cliente: ");
@@ -75,10 +68,5 @@ public class CustomerDatabaseView
         {
             Console.WriteLine($"- {customer.Name} | Saldo: R$ {customer.Balance}");
         }
-    }
-
-    public void ShowMessage(string message)
-    {
-        Console.WriteLine(message);
     }
 }

@@ -12,13 +12,6 @@ public class GameDatabaseView
         Console.WriteLine();
     }
 
-    public int ReadOption()
-    {
-        Console.Write("Escolha uma opção: ");
-        var input = Console.ReadLine();
-        return int.TryParse(input, out var option) ? option : 0;
-    }
-
     public void ShowGames(IReadOnlyList<GameInfo> games)
     {
         Console.WriteLine();
@@ -36,15 +29,5 @@ public class GameDatabaseView
         }
     }
 
-    public string? ReadNameToRemove()
-    {
-        Console.Write("Informe o nome do jogo para remover: ");
-        var name = Console.ReadLine();
-        return string.IsNullOrWhiteSpace(name) ? null : name.Trim();
-    }
-
-    public void ShowMessage(string message)
-    {
-        Console.WriteLine(message);
-    }
+    
 }
