@@ -6,3 +6,10 @@ Dessa forma, é objetivado a aplicação de conceitos estudados durante a discip
 *  Linguagem de programação C#;
 *  Orientação a objetos e dsenvolvimento iterativo;
 *  Designs Patterns e UML para modelagem inicial.
+
+## Integrantes
+
+*  Gabriel Queiroz Venâncio;
+*  João Pedro Meneghetti Collusso;
+*  Rafael Vedoveto Escaliante;
+*  Vitor Barreto Carvalho.
