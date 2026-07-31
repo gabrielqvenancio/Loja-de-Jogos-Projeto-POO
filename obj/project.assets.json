@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net10.0": {}
   },
@@ -8,29 +8,29 @@
     "net10.0": []
   },
   "packageFolders": {
-    "/home/duplogg/.nuget/packages/": {}
+    "/home/vitor/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/duplogg/Área de trabalho/backup/POO/Trabalho/Trabalho.csproj",
+      "projectUniqueName": "/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/Trabalho.csproj",
       "projectName": "Trabalho",
-      "projectPath": "/home/duplogg/Área de trabalho/backup/POO/Trabalho/Trabalho.csproj",
-      "packagesPath": "/home/duplogg/.nuget/packages/",
-      "outputPath": "/home/duplogg/Área de trabalho/backup/POO/Trabalho/obj/",
+      "projectPath": "/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/Trabalho.csproj",
+      "packagesPath": "/home/vitor/.nuget/packages/",
+      "outputPath": "/home/vitor/Desktop/POO-Loja-de-Jogos/Teste/Projeto-POO/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/duplogg/.nuget/NuGet/NuGet.Config"
+        "/home/vitor/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -45,11 +45,10 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "imports": [
           "net461",
@@ -67,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.110/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

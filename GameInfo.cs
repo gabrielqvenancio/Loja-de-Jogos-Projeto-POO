@@ -1,44 +1,63 @@
 using System.Globalization;
+using System.Text;
 
 public class GameInfo
 {
-    public string Name {get;}
-    public DateTime ReleaseDate {get;}
-    public int ReleasePrice {get;}
-    public string Developer {get;}
+    public string Name { get; }
+    public DateTime ReleaseDate { get; }
+    public int ReleasePrice { get; }
+    public string Developer { get; }
+    public int Quantity { get; private set; }
+    public string NormalizedName => NormalizeName(Name);
 
-    public GameInfo(string name, DateTime releaseDate, int releasePrice, string developer)
+    public GameInfo(string name, DateTime releaseDate, int releasePrice, string developer, int quantity = 1)
     {
-        Name = name;
+        Name = name.Trim();
         ReleaseDate = releaseDate;
         ReleasePrice = releasePrice;
-        Developer = developer;
+        Developer = developer.Trim();
+        if (quantity < 1) throw new ArgumentOutOfRangeException(nameof(quantity), "Quantidade deve ser pelo menos 1.");
+        Quantity = quantity;
     }
 
-    public bool HasSameName (GameInfo game)
+    public bool DecrementQuantity()
     {
-        string name1 = Name.ToUpper(), nameCondensed1 = "";
-        string name2 = game.Name.ToUpper(), nameCondensed2 = "";
+        if (Quantity <= 0) return false;
+        Quantity--;
+        return true;
+    }
 
-        for(int i = 0; i < name1.Length; i++)
+    public void IncrementQuantity(int amount = 1)
+    {
+        if (amount <= 0) return;
+        Quantity += amount;
+    }
+
+    public static string NormalizeName(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
         {
-            UnicodeCategory charType = CharUnicodeInfo.GetUnicodeCategory(name1[i]);
-            if(charType == UnicodeCategory.UppercaseLetter || charType == UnicodeCategory.DecimalDigitNumber)
+            return string.Empty;
+        }
+
+        var normalized = value.ToUpperInvariant();
+        var builder = new StringBuilder();
+
+        foreach (var character in normalized)
+        {
+            var category = CharUnicodeInfo.GetUnicodeCategory(character);
+            if (category == UnicodeCategory.UppercaseLetter || category == UnicodeCategory.DecimalDigitNumber)
             {
-                nameCondensed1 = String.Concat(nameCondensed1, name1[i].ToString());
+                builder.Append(character);
             }
         }
 
-        for(int i = 0; i < name2.Length; i++)
-        {
-            UnicodeCategory charType = CharUnicodeInfo.GetUnicodeCategory(name2[i]);
-            if(charType == UnicodeCategory.UppercaseLetter || charType == UnicodeCategory.DecimalDigitNumber)
-            {
-                nameCondensed2 = String.Concat(nameCondensed2, name2[i].ToString());
-            }
-        }
+        return builder.ToString();
+    }
 
-        Console.WriteLine(nameCondensed1);Console.WriteLine(nameCondensed2);
-        return String.Compare(nameCondensed1, nameCondensed2) == 0;
+    public bool HasSameName(GameInfo game)
+    {
+        ArgumentNullException.ThrowIfNull(game);
+        return NormalizedName == game.NormalizedName;
     }
 }
