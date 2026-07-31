@@ -18,7 +18,7 @@ public class UserAccount
 
     public bool AddGame(GameInfo game)
     {
-        if (game == null) return false;
+        if (game is null) return false;
         if (Owns(game.NormalizedName)) return false;
         _ownedGames.Add(game);
         return true;
@@ -27,7 +27,7 @@ public class UserAccount
     public bool RemoveGame(string normalizedName)
     {
         var g = _ownedGames.FirstOrDefault(x => x.NormalizedName == normalizedName);
-        if (g == null) return false;
+        if (g is null) return false;
         _ownedGames.Remove(g);
         return true;
     }

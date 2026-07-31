@@ -41,7 +41,7 @@ public class GameStore
 
         var normalizedName = GameInfo.NormalizeName(name);
         var game = _games.FirstOrDefault(existing => existing.NormalizedName == normalizedName);
-        if (game == null || game.Quantity <= 0)
+        if (game is null || game.Quantity <= 0)
         {
             return false;
         }

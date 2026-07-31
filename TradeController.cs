@@ -25,11 +25,11 @@ public class TradeController
                 case 1:
                 {
                     var data = _view.ReadTradeData();
-                    if (data == null) { StandardView.ShowMessage("Dados inválidos."); break; }
+                    if (data is null) { StandardView.ShowMessage("Dados inválidos."); break; }
 
                     var a = _accounts.FindByName(data.Value.fromUser);
                     var b = _accounts.FindByName(data.Value.toUser);
-                    if (a == null || b == null) { StandardView.ShowMessage("Cliente não encontrado."); break; }
+                    if (a is null || b is null) { StandardView.ShowMessage("Cliente não encontrado."); break; }
 
                     var result = _model.Trade(a, b, data.Value.fromGame, data.Value.toGame);
                     if (result.Success)

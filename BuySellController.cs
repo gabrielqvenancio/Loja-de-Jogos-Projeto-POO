@@ -20,7 +20,7 @@ public class BuySellController
         }
 
         var account = SelectAccount();
-        if (account == null)
+        if (account is null)
         {
             StandardView.ShowMessage("Cliente inválido.");
             return;
@@ -40,7 +40,7 @@ public class BuySellController
                 case 1:
                 {
                     var name = _view.ReadGameName("Nome do jogo para comprar: ");
-                    if (name == null) { StandardView.ShowMessage("Nome inválido."); break; }
+                    if (name is null) { StandardView.ShowMessage("Nome inválido."); break; }
                     var ok = _model.Purchase(account, name);
                     StandardView.ShowMessage(ok ? "Compra realizada." : "Compra falhou.");
                     break;
@@ -48,7 +48,7 @@ public class BuySellController
                 case 2:
                 {
                     var name = _view.ReadGameName("Nome do jogo para vender: ");
-                    if (name == null) { StandardView.ShowMessage("Nome inválido."); break; }
+                    if (name is null) { StandardView.ShowMessage("Nome inválido."); break; }
                     var ok = _model.Sell(account, name);
                     StandardView.ShowMessage(ok ? "Venda realizada." : "Venda falhou.");
                     break;
