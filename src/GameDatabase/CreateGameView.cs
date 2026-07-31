@@ -49,7 +49,7 @@ public class CreateGameView
             return null;
         }
 
-        Console.Write("Preço: ");
+        Console.Write("Preço novo: ");
         if (!int.TryParse(Console.ReadLine(), out var price) || price < 0)
         {
             Console.WriteLine("Preço inválido.");

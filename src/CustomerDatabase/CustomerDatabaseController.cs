@@ -39,6 +39,11 @@ public class CustomerDatabaseController
                 }
                 case 4:
                 {
+                    EditCustomer();
+                    break;
+                }
+                case 5:
+                {
                     AddBalance();
                     break;
                 }
@@ -92,6 +97,53 @@ public class CustomerDatabaseController
 
         var success = model.RemoveCustomer(name);
         StandardView.ShowMessage(success ? "Cliente removido com sucesso." : "Cliente não encontrado.");
+    }
+
+    private void EditCustomer()
+    {
+        EditCustomerModel model = new(_accounts, _log);
+
+        var name = StandardView.ReadName("Informe o nome do cliente para editar: ");
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            StandardView.ShowMessage("Nome inválido.");
+            return;
+        }
+
+        Console.Write("Deseja editar o nome desse cliente (s/n): ");
+        var editNameOption = Console.ReadLine();
+        var shouldEditName = editNameOption?.Trim().Equals("s", StringComparison.OrdinalIgnoreCase) == true;
+
+        string? newName = null;
+        if (shouldEditName)
+        {
+            newName = StandardView.ReadName("Novo nome: ");
+            if (string.IsNullOrWhiteSpace(newName))
+            {
+                StandardView.ShowMessage("Nome inválido.");
+                return;
+            }
+        }
+
+        Console.Write("Deseja editar o saldo? (s/n): ");
+        var editBalanceOption = Console.ReadLine();
+        var shouldEditBalance = editBalanceOption?.Trim().Equals("s", StringComparison.OrdinalIgnoreCase) == true;
+
+        int? newBalance = null;
+        if (shouldEditBalance)
+        {
+            Console.Write("Informe o novo saldo: ");
+            if (!int.TryParse(Console.ReadLine(), out var balance) || balance < 0)
+            {
+                StandardView.ShowMessage("Saldo inválido.");
+                return;
+            }
+
+            newBalance = balance;
+        }
+
+        var success = model.EditCustomer(name, newName, newBalance);
+        StandardView.ShowMessage(success ? "Cliente editado com sucesso." : "Cliente não encontrado.");
     }
 
     private void AddBalance()

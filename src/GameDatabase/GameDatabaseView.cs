@@ -8,6 +8,7 @@ public class GameDatabaseView
         Console.WriteLine("1) Registrar jogo");
         Console.WriteLine("2) Listar jogos");
         Console.WriteLine("3) Remover jogo");
+        Console.WriteLine("4) Editar jogo");
         Console.WriteLine("-1) Retornar ao menu");
         Console.WriteLine();
     }

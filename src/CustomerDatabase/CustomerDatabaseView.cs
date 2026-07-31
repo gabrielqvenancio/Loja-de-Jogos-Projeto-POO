@@ -8,7 +8,8 @@ public class CustomerDatabaseView
         Console.WriteLine("1) Cadastrar cliente");
         Console.WriteLine("2) Listar clientes");
         Console.WriteLine("3) Remover cliente");
-        Console.WriteLine("4) Adicionar saldo");
+        Console.WriteLine("4) Editar cliente");
+        Console.WriteLine("5) Adicionar saldo");
         Console.WriteLine("-1) Retornar ao menu");
         Console.WriteLine();
     }
