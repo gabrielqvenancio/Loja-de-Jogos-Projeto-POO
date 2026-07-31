@@ -21,4 +21,32 @@ public class BuySellView
         foreach (var g in account.OwnedGames)
             Console.WriteLine($" - {g.Name} | R$ {g.ReleasePrice}");
     }
+
+    public bool ShowTransactionDetails(UserAccount account, GameInfo game, string transactionType)
+    {
+        while(true)
+        {
+            Console.Clear();
+            Console.WriteLine($"O usuário {account.Name} {transactionType}á o jogo {game.Name} por R${game.ReleasePrice}.");
+            Console.WriteLine();
+            Console.WriteLine("Digite: 1 - Confirmar operação, 2 - Encerrar operação");
+            
+            int option = StandardView.ReadOption();
+            switch(option)
+            {
+                case 1:
+                    Console.WriteLine("Começando operação...");
+                    return true;
+                case 2:
+                    Console.WriteLine("Encerrando operação...");
+                    return false;
+                default:
+                    Console.WriteLine("Opção inválida.");
+                    break;
+            }
+
+            Console.WriteLine("Pressione qualquer tecla para continuar...");
+            Console.ReadKey();
+        }
+    }
 }

@@ -3,12 +3,14 @@ public class BuySellController
     private readonly BuySellView _view;
     private readonly BuySellModel _model;
     private readonly AccountStore _accounts;
+    private readonly GameStore _store;
 
     public BuySellController(GameStore store, AccountStore accounts, TransactionLog log)
     {
         _view = new BuySellView();
         _model = new BuySellModel(store, log, accounts);
         _accounts = accounts;
+        _store = store;
     }
 
     public void Run()
@@ -63,23 +65,29 @@ public class BuySellController
     private void BuyGame(UserAccount account)
     {
         var name = StandardView.ReadName("Nome do jogo para comprar: ");
-        if (name is null)
+        GameInfo game = _model.GetGameInfo(_store.GetAll(), name!)!;
+        if (game is null)
         { 
-            StandardView.ShowMessage("Nome inválido.");
+            StandardView.ShowMessage("Jogo inválido.");
             return;
         }
-        StandardView.ShowMessage(_model.Purchase(account, name) ? "Compra realizada." : "Compra falhou.");
+
+        if(!_view.ShowTransactionDetails(account, game, "comprar")) return;
+        StandardView.ShowMessage(_model.Purchase(account, game) ? "Compra realizada." : "Compra falhou.");
     }
 
     private void SellGame(UserAccount account)
     {
         var name = StandardView.ReadName("Nome do jogo para vender: ");
-        if (name is null)
+        GameInfo game = _model.GetGameInfo(account.OwnedGames, name!)!;
+        if (game is null)
         {
-            StandardView.ShowMessage("Nome inválido.");
+            StandardView.ShowMessage("Jogo inválido.");
             return;
         }
-        StandardView.ShowMessage(_model.Sell(account, name) ? "Venda realizada." : "Venda falhou.");
+
+        if(!_view.ShowTransactionDetails(account, game, "vender")) return;
+        StandardView.ShowMessage(_model.Sell(account, game) ? "Venda realizada." : "Venda falhou.");
     }
 
     private UserAccount? SelectAccount()

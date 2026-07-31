@@ -11,16 +11,19 @@ public class BuySellModel
         _accounts = accounts;
     }
 
-    public bool Purchase(UserAccount account, string gameName)
+    public GameInfo? GetGameInfo(IReadOnlyList<GameInfo> gameCollection, string gameName)
     {
-        if (account is null || string.IsNullOrWhiteSpace(gameName)) return false;
-
+        if(string.IsNullOrWhiteSpace(gameName)) return null;
         var normalized = GameInfo.NormalizeName(gameName);
-        var game = _store.GetAll().FirstOrDefault(g => g.NormalizedName == normalized);
-        if (game is null || game.Quantity <= 0) return false;
+        return gameCollection.FirstOrDefault(g => g.NormalizedName == normalized);
+    }
 
+    public bool Purchase(UserAccount account, GameInfo game)
+    {
         var admin = _accounts.FindByName("Admin");
         if (admin is null) return false;
+
+        if (account is null || account == admin || game.Quantity <= 0) return false;
 
         if (!account.Debit(game.ReleasePrice)) return false;
 
@@ -43,25 +46,14 @@ public class BuySellModel
         return true;
     }
 
-    public bool Sell(UserAccount account, string gameName)
+    public bool Sell(UserAccount account, GameInfo game)
     {
-        if (account is null || string.IsNullOrWhiteSpace(gameName)) return false;
-
-        var normalized = GameInfo.NormalizeName(gameName);
-        if (!account.Owns(normalized)) return false;
-
-        var game = account.OwnedGames.FirstOrDefault(g => g.NormalizedName == normalized);
-        if (game is null) return false;
-
-        if (!account.RemoveGame(normalized)) return false;
+        if (account is null) return false;
 
         var admin = _accounts.FindByName("Admin");
-        if (admin is null || !admin.Debit(game.ReleasePrice))
-        {
-            account.AddGame(game);
-            return false;
-        }
+        if (admin is null) return false;
 
+        if (!account.RemoveGame(game.NormalizedName)) return false;
         account.Credit(game.ReleasePrice);
         var stockGame = new GameInfo(game.Name, game.ReleaseDate, game.ReleasePrice, game.Developer, 1);
         if (!_store.IncreaseStock(stockGame))
