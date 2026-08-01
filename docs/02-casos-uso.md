@@ -12,22 +12,19 @@ Temos como opções:
 - Registrar um cliente;
 - Listar os clientes cadastrados;
 - Editar as informações de um cliente já cadastrado;
-- Adicionar o saldo de um cliente;
+- Adicionar valor ao saldo de um cliente;
 - Remover um cliente;
 
 ## III) Painel de Transações
 Temos como opções:
-- Comprar um jogo;
-- Vender um jogo;
-
-Para uma boa efeituação da compra, há implementação dos sistema de: 
-- Orçamentos de compra;
-- Realizar a venda;
+- Orçamentar e efetuar a compra de um jogo da loja;
+- Orçamentar e não efetuar a compra de um jogo da loja;
+- Orçamentar e efetuar a venda de um jogo para a loja;
+- Orçamentar e não efetuar a venda de um jogo para a loja;
 
 ## IV) Painel de Trocas
 Temos como opções:
-- Realizar uma troca;
-
-Para uma boa efeituação da troca, há implementação dos sistema de: 
-- Orçamentos de troca;
-- Realizar a troca;
+- Orçamentar e realizar uma troca entre clientes;
+- Orçamentar e não realizar uma troca entre clientes;
+- Orçamentar e realizar uma troca com a loja;
+- Orçamentar e não realizar uma troca com a loja;
