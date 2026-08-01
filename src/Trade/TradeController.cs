@@ -4,10 +4,10 @@ public class TradeController
     private readonly TradeModel _model;
     private readonly AccountStore _accounts;
 
-    public TradeController(AccountStore accounts, TransactionLog log)
+    public TradeController(GameStore store, AccountStore accounts, TransactionLog log)
     {
         _view = new TradeView();
-        _model = new TradeModel(log);
+        _model = new TradeModel(log, store);
         _accounts = accounts;
     }
 
@@ -25,7 +25,12 @@ public class TradeController
             {
                 case 1:
                 {
-                    Trade();
+                    UserTrade();
+                    break;
+                }
+                case 2:
+                {
+                    StoreTrade();
                     break;
                 }
                 case -1:
@@ -40,9 +45,9 @@ public class TradeController
         }
     }
 
-    private void Trade()
+    private void UserTrade()
     {
-        var data = _view.ReadTradeData();
+        var data = _view.ReadUserTradeData();
         if (data is null)
         {
             StandardView.ShowMessage("Dados inválidos.");
@@ -57,7 +62,41 @@ public class TradeController
             return;
         }
 
-        var result = _model.Trade(a, b, data.Value.fromGame, data.Value.toGame);
+        var result = _model.UserTrade(a, b, data.Value.fromGame, data.Value.toGame);
+        if (result.Success)
+        {
+            if (result.PaymentAmount.HasValue)
+            {
+                StandardView.ShowMessage($"Troca realizada. {result.PayingUserName} precisa pagar R$ {result.PaymentAmount.Value} para completar a troca.");
+            }
+            else
+            {
+                StandardView.ShowMessage("Troca realizada.");
+            }
+        }
+        else
+        {
+            StandardView.ShowMessage("Troca falhou.");
+        }
+    }
+
+    private void StoreTrade()
+    {
+        var data = _view.ReadStoreTradeData();
+        if (data is null)
+        {
+            StandardView.ShowMessage("Dados inválidos.");
+            return;
+        }
+
+        var a = _accounts.FindByName(data.Value.fromUser);
+        if (a is null)
+        {
+            StandardView.ShowMessage("Cliente não encontrado.");
+            return;
+        }
+
+        var result = _model.StoreTrade(a, data.Value.fromGame, data.Value.toGame);
         if (result.Success)
         {
             if (result.PaymentAmount.HasValue)

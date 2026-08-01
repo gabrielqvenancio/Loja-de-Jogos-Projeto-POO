@@ -38,7 +38,7 @@ public class MainMenuController
                     new BuySellController(_store, _accounts, _log).Run();
                     break;
                 case 4:
-                    new TradeController(_accounts, _log).Run();
+                    new TradeController(_store, _accounts, _log).Run();
                     break;
                 case -1:
                     continueProgram = false;
